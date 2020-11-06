@@ -1,0 +1,65 @@
+@import '../../index.scss';
+
+$resizer-size: 2rem;
+
+//Default both directon - aperto a moltissime customizzazioni
+.resizable {
+   position: relative;
+   box-sizing: border-box;
+   margin: 0;
+   top: 10rem;
+   left: 30rem;
+   width: 15rem;
+   height: 20rem;
+   background-color: black;
+   border-radius: 1rem;
+   overflow: auto;
+
+   .top-left {
+      position: absolute;
+      box-sizing: border-box;
+      cursor: nw-resize;
+      top: 0;
+      left: 0;
+      width: $resizer-size;
+      height: $resizer-size;
+      border-radius: 1rem;
+      background-color: darkmagenta;
+   }
+
+   .top-right {
+      position: absolute;
+      box-sizing: border-box;
+      cursor: sw-resize;
+      top: 0;
+      right: 0;
+      width: $resizer-size;
+      height: $resizer-size;
+      border-radius: 1rem;
+      background-color: darkmagenta;
+   }
+
+   .bottom-left {
+      position: absolute;
+      box-sizing: border-box;
+      cursor: sw-resize;
+      bottom: 0;
+      left: 0;
+      width: $resizer-size;
+      height: $resizer-size;
+      border-radius: 1rem;
+      background-color: darkmagenta;
+   }
+
+   .bottom-right {
+      position: absolute;
+      box-sizing: border-box;
+      cursor: nw-resize;
+      bottom: 0;
+      right: 0;
+      width: $resizer-size;
+      height: $resizer-size;
+      border-radius: 1rem;
+      background-color: darkmagenta;
+   }
+}

@@ -1,0 +1,105 @@
+/**
+*  Calendar
+*/
+.Month,
+.Head,
+.Name,
+.Body,
+.Day span,
+.Day,
+.DayContainer,
+.Container {
+  position: relative;
+  display: block;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+}
+
+.Month {
+  height: 30px;
+  width: 100%;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 30px;
+  color: #666;
+}
+.Head {
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Name {
+  width: 14.285%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #666;
+  font-size: 9px;
+  text-align: center;
+}
+
+.Body {
+  height: 270px;
+  width: 100%;
+}
+
+.DayContainer {
+  width: 14.285%;
+  height: 16.6666%;
+}
+
+.Day {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  color: #444;
+  text-align: center;
+}
+.Day span {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  color: #444;
+}
+
+.Day span:hover {
+  cursor: pointer;
+  background: #eee;
+}
+.Day span {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  left: 50%;
+  top: 50%;
+  font-weight: 400;
+  border-radius: 100%;
+  line-height: 30px;
+}
+.DayContainer.Disabled {
+  pointer-events: none;
+}
+
+.DayContainer.Disabled .Day span {
+  color: #ddd;
+}
+.DayContainer.Disabled .Day span {
+  background: #fff !important;
+}
+.DayContainer.Highlight .Day span {
+  background: #efdbca;
+}
+.DayContainer.HighlightGreen .Day span {
+  background: #d4e2cb;
+}

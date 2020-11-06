@@ -1,0 +1,32 @@
+@import'../../../../index.scss';
+
+.NavbarListItem {
+   @include fluid;
+   list-style: none;
+
+   a {
+      @include fluid;
+      @include v-center;
+      padding: 0 1rem;
+      color: #fafafa;
+      text-decoration: none;
+      transition: .4s;
+      font-size: 1rem;
+
+      &:hover {
+         background-color: $color-theme;
+      }
+
+      &.Active {
+         background-color: $color-theme;
+      }
+   }
+}
+
+// @media (max-width:991px) {
+//    .NavbarListItem {
+//       a {
+//          border-bottom: 1px solid rgba(0, 0, 0, .2);
+//       }
+//    }
+// }

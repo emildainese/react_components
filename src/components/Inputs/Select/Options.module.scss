@@ -1,0 +1,59 @@
+@import'../../../index.scss';
+
+$transition-time:.4s;
+
+.OptionsBox {
+   max-height: 0;
+   overflow: hidden;
+   opacity: 0;
+   transition: all $transition-time;
+   border: 1px solid #ccc;
+   border-radius: 0.5rem;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+
+   & label {
+      left: 1.5rem;
+   }
+
+   &.Active {
+      max-height: 20rem;
+      // opacity: 1;
+      overflow-y: scroll;
+   }
+
+   &::-webkit-scrollbar {
+      width: 0.5rem;
+      background: #ccc;
+      border-radius: 0 0.5rem 0.5rem 0;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background: $color-theme;
+      border-radius: 0 0.5rem 0.5rem 0;
+   }
+}
+
+.Option {
+   color: rgba(0, 0, 0, .5);
+   background: white;
+   padding: 0.8rem 1.5rem;
+   cursor: pointer;
+   transform: all $transition-time;
+
+   &:hover {
+      background: #eee;
+   }
+
+   label {
+      cursor: pointer;
+   }
+}
+
+.Inputs {
+   display: flex;
+
+   .Filter {
+      margin-left: 1rem;
+      width: 80%;
+   }
+}

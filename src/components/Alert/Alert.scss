@@ -1,0 +1,100 @@
+@import '../../index.scss';
+
+.alert {
+   width: 30rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+   border-radius: 0.5rem;
+   background-color: #fafafa;
+
+   .alert-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0.5rem;
+
+      .fas.fa-times {
+         cursor: pointer;
+         color: rgba(0, 0, 0, .5);
+
+         &:hover {
+            color: rgba(0, 0, 0, .8)
+         }
+      }
+
+      h2 {
+         font-weight: 500;
+         font-size: 1.5rem;
+
+         color: ragba(0, 0, 0, 0.8);
+      }
+   }
+
+   .alert-body {
+      width: 100%;
+      font-weight: 400;
+      font-size: 0.875rem;
+      padding: 0.5rem 0.5rem;
+      line-height: 1.43;
+   }
+
+   .alert-footer {
+      width: 100%;
+
+      .alert-action {
+         padding: 0.5rem 0.5rem;
+      }
+   }
+
+   //Transition
+   &.alert-enter {
+      opacity: 0;
+      transform: scale(0.9);
+   }
+
+   &.alert-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms, transform 300ms;
+   }
+
+   &.alert-exit {
+      opacity: 1;
+   }
+
+   &.alert-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+   }
+
+   //Colors
+   &.alert-primary {
+      color: #004085;
+      background-color: #cce5ff;
+      border-color: #b8daff;
+   }
+
+   &.alert-danger {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+   }
+
+   &.alert-warning {
+      color: #856404;
+      background-color: #fff3cd;
+      border-color: #ffeeba;
+   }
+
+   &.alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+   }
+
+   &.alert-info {
+      color: #0c5460;
+      background-color: #d1ecf1;
+      border-color: #bee5eb;
+   }
+}

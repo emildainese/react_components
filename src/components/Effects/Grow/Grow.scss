@@ -1,0 +1,61 @@
+@import'../../../index.scss';
+
+$transition-time:0.3s;
+
+.test {
+   padding: 0.5rem;
+   width: 10rem;
+   height: 10rem;
+   background-color: black;
+   color: $text-light;
+   margin-top: 1rem;
+   @include center;
+   opacity: 0;
+}
+
+.grow-enter {
+   transform-origin: center center;
+   transform: scale(0);
+   opacity: 0;
+}
+
+.grow-enter-active {
+   transform: scale(0);
+   opacity: 1;
+}
+
+.grow-enter-done {
+   animation: grow #{$transition-time} linear forwards;
+   transition: opacity #{$transition-time} ease-out;
+   opacity: 1;
+}
+
+.grow-exit {
+   opacity: 1;
+}
+
+.grow-exit-active {
+   animation: shrink #{$transition-time} linear forwards;
+   transition: opacity #{$transition-time} ease-out;
+   opacity: 0;
+}
+
+@keyframes grow {
+   from {
+      transform: scale(0);
+   }
+
+   to {
+      transform: scale(1);
+   }
+}
+
+@keyframes shrink {
+   from {
+      transform: scale(1);
+   }
+
+   to {
+      transform: scale(0);
+   }
+}

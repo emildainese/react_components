@@ -1,0 +1,56 @@
+@import'../../../index.scss';
+
+$transition-time: 0.3s;
+$shrink:1.5;
+
+.test {
+   padding: 0.5rem;
+   width: 10rem;
+   height: 10rem;
+   background-color: $bg-color;
+   color: $text-light;
+   margin-top: 3rem;
+   @include center;
+}
+
+.scale-enter {
+   transform: scale(1);
+}
+
+.scale-enter-active {
+   transform: scale(1);
+}
+
+.scale-enter-done {
+   animation: grow #{$transition-time} linear forwards;
+}
+
+.scale-exit {
+   transform: scale(#{$shrink});
+}
+
+.scale-exit-active {
+   animation: shrink #{$transition-time} linear forwards;
+}
+
+
+
+@keyframes grow {
+   from {
+      transform: scale(1);
+   }
+
+   to {
+      transform: scale(#{$shrink});
+   }
+}
+
+@keyframes shrink {
+   from {
+      transform: scale(#{$shrink});
+   }
+
+   to {
+      transform: scale(1);
+   }
+}

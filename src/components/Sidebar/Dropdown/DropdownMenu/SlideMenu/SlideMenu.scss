@@ -1,0 +1,22 @@
+@import'../../../../../index.scss';
+
+ul.dropdown-menu-list {
+   position: absolute;
+   left: 0;
+   width: 100%;
+}
+
+@keyframes setZIndex {
+   0% {
+      z-index: -1;
+   }
+
+   99% {
+
+      z-index: -1;
+   }
+
+   100% {
+      z-index: 1;
+   }
+}

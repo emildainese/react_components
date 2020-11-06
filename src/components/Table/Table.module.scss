@@ -1,0 +1,13 @@
+@import'../../index.scss';
+
+.Table {
+   width: 100%;
+   border-collapse: collapse;
+   table-layout: fixed;
+}
+
+@media(max-width:991px) {
+   .Table {
+      table-layout: auto;
+   }
+}

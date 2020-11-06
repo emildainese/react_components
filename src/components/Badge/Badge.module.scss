@@ -1,0 +1,11 @@
+@import'../../index.scss';
+
+.Badge {
+   font-weight: 400;
+   font-family: 'Open Sans', sans-serif;
+   padding: 0.2rem 1rem;
+   border-radius: 3px;
+   background-color: $color-theme;
+   color: white;
+   box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+}

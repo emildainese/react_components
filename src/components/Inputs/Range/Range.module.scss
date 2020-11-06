@@ -1,0 +1,142 @@
+@import '../../../index.scss';
+$thumb-size: 15px;
+$slider-size: 2px;
+
+.InputFieldControl {
+  position: relative;
+  top: 10rem;
+}
+
+.Slider {
+  position: relative;
+  z-index: 1;
+  height: $slider-size;
+  margin: 0 15px;
+}
+
+.Slider > .Track {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: calc(#{$slider-size} / 2);
+  background-color: #c6aee7;
+}
+
+.Slider > .Range {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  right: 25%;
+  top: 0;
+  bottom: 0;
+  //border-radius: calc(#{$slider-size} / 2);
+  background-color: #6200ee;
+}
+
+.Slider > .Thumb {
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  width: $thumb-size;
+  height: $thumb-size;
+  background-color: #6200ee;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(98, 0, 238, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.Slider > .Thumb.Left {
+  left: 25%;
+  transform: translate(-$thumb-size, -$slider-size);
+}
+
+.Slider > .Thumb.Right {
+  right: 25%;
+  transform: translate($thumb-size, -$slider-size);
+}
+
+.Slider > .Thumb.Hover {
+  box-shadow: 0 0 0 10px rgba($color-theme, 0.1);
+}
+
+.Slider > .Thumb.Active {
+  box-shadow: 0 0 0 20px rgba($color-theme, 0.2);
+}
+
+//Marker
+.Thumb {
+  $marker-size: 40px;
+  $marker-label-size: 35px;
+  position: absolute;
+  width: fit-content;
+  background: transparent;
+  text-align: center;
+  top: calc(-#{$thumb-size / 2} + #{$slider-size});
+
+  //Creare classi apposite per mainipolare pseudo elements
+  &.ActivateMarker {
+    &:before,
+    &:after {
+      display: inline-block;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: $marker-size;
+    height: $marker-size;
+    border-radius: 50% 50% 50% 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &::after {
+    content: attr(value);
+    position: absolute;
+    z-index: 2;
+    top: calc(-50% - #{$marker-label-size - 1px} - #{$thumb-size / 2});
+    left: calc(50% - #{$marker-label-size} / 2 - 1px);
+    border-radius: 50%;
+    display: none;
+    width: $marker-label-size;
+    height: $marker-label-size;
+    font-size: 1rem;
+    line-height: $marker-label-size;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  &.MarkerTop::before {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+input[type='range'] {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+  //top: 50px;
+  opacity: 0;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0 none;
+  background-color: red;
+  -webkit-appearance: none;
+}

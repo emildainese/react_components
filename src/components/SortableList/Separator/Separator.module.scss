@@ -1,0 +1,11 @@
+.Separator {
+  padding: 0.5rem;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 2px;
+    background: gray;
+    opacity: 0.1;
+  }
+}

@@ -1,0 +1,17 @@
+.Navbar {
+   height: 100%;
+
+   &.Active {
+      transform: translateX(100%);
+   }
+}
+
+// @media (max-width:991px) {
+//    .Navbar {
+//       position: absolute;
+//       width: 40%;
+//       background-color: #333;
+//       left: -40%;
+//       transition: .5s;
+//    }
+// }

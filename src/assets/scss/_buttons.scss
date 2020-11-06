@@ -1,0 +1,209 @@
+@import './variables';
+
+.btn {
+  color: $text-light;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  transition: all .5s;
+  outline: none;
+  user-select: none;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active,
+  &[disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+  }
+}
+
+.btn-primary {
+  color: $text-light;
+  background-color: #007bff;
+  border-color: #007bff;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-light;
+    background-color: #006fe6;
+    border-color: #0062cc;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active,
+  &[disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: $text-light;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+}
+
+.btn-danger {
+  color: $text-light;
+  background-color: #dc3545;
+  border-color: #dc3545;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-light;
+    background-color: #ce2435;
+    border-color: #bd2130;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active,
+  &[disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: $text-light;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+}
+
+.btn-warning {
+  color: $text-light;
+  background-color: #ffc107;
+  border-color: #ffc107;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-light;
+    background-color: #edb100;
+    border-color: #d39e00;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active,
+  &[disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: $text-light;
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+}
+
+.btn-success {
+  color: $text-light;
+  background-color: #28a745;
+  border-color: #28a745;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-light;
+    background-color: #23923d;
+    border-color: #1e7e34;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &[disabled]:active,
+  &[disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: $text-light;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+}
+
+.btn-violet {
+  color: $text-light;
+  background-color: blueviolet;
+  border-color: blueviolet;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-light;
+    background-color: #7222bd;
+    border-color: #7222bd;
+  }
+
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &.disabled.active,
+  [disabled] &:hover,
+  [disabled] &:focus,
+  [disabled] &:active,
+  [disabled].active,
+  fieldset[disabled] &:hover,
+  fieldset[disabled] &:focus,
+  fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    color: $text-light;
+    background-color: #9e65d3;
+    border-color: #9e65d3;
+  }
+}

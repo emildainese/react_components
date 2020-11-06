@@ -1,0 +1,142 @@
+@import '../../../index.scss';
+
+$padding-bottom: 1.5rem;
+$padding-left: 2rem;
+$input-padding: 0.5rem;
+
+.Header {
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f7f7f7;
+  padding: 20px $padding-left;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.Form {
+  background-color: #f7f7f7;
+  margin: 0 auto;
+  width: 40%;
+  border-radius: 0.5rem;
+
+  button {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $color-theme;
+    border: 1px solid $color-theme;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+
+    &:not(:disabled) {
+      animation: shadow-pulse 1s 1;
+    }
+
+    &:disabled {
+      background-color: rgba($color-theme, 0.8);
+    }
+  }
+}
+
+.FormControl {
+  position: relative;
+  padding-bottom: $padding-bottom;
+  padding-left: $padding-left;
+  padding-right: $padding-left;
+  margin: 1rem 0;
+
+  label {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: $input-padding;
+    width: 100%;
+
+    &:disabled {
+      background-color: #eee;
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: #777;
+    }
+  }
+
+  i {
+    visibility: hidden;
+    position: absolute;
+    bottom: calc(#{$padding-bottom} + #{$input-padding});
+    right: 3rem;
+  }
+
+  small {
+    color: $color-danger;
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    visibility: hidden;
+  }
+}
+
+.FormControl.Success input {
+  border-color: $color-success;
+}
+
+.FormControl.Error input {
+  border-color: $color-danger;
+}
+
+.FormControl.Success i.Check {
+  visibility: visible;
+  color: $color-success;
+}
+
+.FormControl.Error i.Exclamation {
+  visibility: visible;
+  color: $color-danger;
+}
+
+.FormControl.Error small {
+  visibility: visible;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba($color-theme, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 1rem rgba($color-theme, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($color-theme, 0.2);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1rem rgba($color-theme, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($color-theme, 0);
+  }
+}

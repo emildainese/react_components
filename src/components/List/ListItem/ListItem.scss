@@ -1,0 +1,41 @@
+@import'../../../index.scss';
+
+$transition-time:.3;
+
+.list-group-item {
+   overflow: hidden;
+   position: relative;
+   background-color: #fafafa;
+   color: #222;
+   border: 1px solid #ccc;
+   list-style: none;
+   border-radius: 0.5rem;
+   padding: 0.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 0.5rem;
+   transition: all .3s ease-out;
+
+   &:hover {
+      background-color: #eee;
+   }
+}
+
+.item-enter {
+   opacity: 0;
+}
+
+.item-enter-active {
+   opacity: 1;
+   transition: opacity #{$transition-time}s ease-in;
+}
+
+.item-exit {
+   opacity: 1;
+}
+
+.item-exit-active {
+   opacity: 0;
+   transition: opacity #{$transition-time}s ease-in;
+}

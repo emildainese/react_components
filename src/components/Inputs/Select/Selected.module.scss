@@ -1,0 +1,47 @@
+@import'../../../index.scss';
+
+.Selected {
+   position: relative;
+   background: white;
+   border-radius: 0.5rem;
+   margin-bottom: 0.2rem;
+   padding: 0.8rem 1.5rem;
+   cursor: pointer;
+   color: rgba(0, 0, 0, .5);
+   border: 1px solid #ccc;
+   order: 0;
+
+   &.Active {
+      border-color: $color-theme;
+   }
+
+   .Times {
+      color: $color-theme;
+      position: absolute;
+      right: 1.5rem;
+      top: 0;
+      @include center;
+      height: 100%;
+      width: 2rem;
+      transition: all 0.5s;
+
+      &:hover {
+         background-color: #eee;
+      }
+   }
+
+   .Arrow {
+      color: $color-theme;
+      position: absolute;
+      right: 0.5rem;
+      top: 0;
+      @include center;
+      height: 100%;
+      width: 1rem;
+      transition: all 0.5s;
+
+      &.Active {
+         transform: rotateX(180deg);
+      }
+   }
+}

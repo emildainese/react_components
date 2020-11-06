@@ -1,0 +1,22 @@
+@import'../../../index.scss';
+
+$transition-time:.3s;
+
+.TabHeader {
+   overflow: hidden;
+   border: 1px solid #ccc;
+   background-color: #fafafa;
+   position: relative;
+}
+
+.Highlighter {
+   position: absolute;
+   z-index: 10;
+   bottom: 0;
+   height: 3px;
+   background: $color-theme;
+   //width: 5rem;
+   transform: translateX(0);
+   left: 0;
+   transition: transform $transition-time ease;
+}

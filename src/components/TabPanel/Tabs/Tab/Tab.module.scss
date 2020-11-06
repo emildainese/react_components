@@ -1,0 +1,32 @@
+$transition-time:0.5s;
+
+.Tab {
+   display: none;
+   padding: 1rem 1.5rem;
+   border: 1px solid #ccc;
+   border-top: none;
+
+   .TabHeader {
+      margin-bottom: 1rem;
+      animation: fade $transition-time ease-out;
+   }
+
+   .TabContent {
+      transition: opacity $transition-time ease-out;
+      animation: fade $transition-time ease-out;
+   }
+
+   &.ActiveTab {
+      display: block;
+   }
+}
+
+@keyframes fade {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}

@@ -1,0 +1,72 @@
+@import'../../index.scss';
+
+
+form {
+   padding: 1rem;
+   width: 40%;
+   min-width: 250px;
+   margin: 2rem auto;
+   background-color: #fafafa;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+
+   .form-control {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      margin-bottom: 0.5rem;
+
+      label {
+         margin-bottom: 0.2rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select,
+      textarea {
+         box-sizing: border-box;
+         margin-bottom: 0.5rem;
+         padding: 0.5rem;
+         border: solid 1px #ccc;
+         border-radius: 0.5rem;
+         transition: all .3s;
+
+         &:focus {
+            outline: none;
+            border-color: rgba($color-primary, 0.8);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba($color-primary, 0.6);
+         }
+      }
+
+
+      .radio-input-group {
+         padding: 0.5rem;
+         display: flex;
+         flex-direction: column;
+
+         .radio-input {
+            input[type="radio"] {
+               margin-right: 0.25rem;
+            }
+         }
+      }
+   }
+
+   .form-control.checkbox {
+      @include v-center;
+      flex-direction: row;
+      width: 100%;
+
+      input[type="checkbox"] {
+         margin-left: 0.25rem;
+      }
+   }
+
+   .form-actions {
+      button {
+         margin-right: 0.5rem;
+      }
+   }
+
+}

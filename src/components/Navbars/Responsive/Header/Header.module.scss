@@ -1,0 +1,20 @@
+@import'../../../../index.scss';
+
+.Header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 0 1rem;
+   background-color: #262626;
+   width: 100%;
+   box-sizing: border-box;
+   @include v-center;
+   justify-content: space-between;
+}
+
+
+// @media (max-width:991px) {
+//    .Header {
+//       padding: 0 2rem;
+//    }
+// }

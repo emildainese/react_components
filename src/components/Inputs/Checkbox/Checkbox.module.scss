@@ -1,0 +1,125 @@
+@import '../../../index.scss';
+
+$chekmark-size: 20px;
+$ripple-size: 3.5rem;
+$transition-time: 0.3s;
+
+.FormField {
+  margin: 1rem auto;
+}
+
+.FormFieldControl {
+  padding: 0.5rem;
+}
+
+.Checkbox {
+  position: relative;
+  padding-left: 1.75rem;
+  cursor: pointer;
+  font-size: calc(#{$chekmark-size} - 3px);
+  user-select: none;
+
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked + .Checkmark {
+      background-color: $color-theme;
+      border: 2px solid $color-theme;
+    }
+
+    &:checked + .Checkmark:after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 30%;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:checked ~ span.Ripple {
+      animation: ripple1 $transition-time ease-out;
+    }
+
+    & ~ span.Ripple {
+      animation: ripple2 $transition-time ease-out;
+    }
+  }
+
+  .Ripple {
+    display: block;
+    position: absolute;
+    top: calc((#{$chekmark-size} - #{$ripple-size}) / 2);
+    left: calc((#{$chekmark-size} - #{$ripple-size}) / 2);
+    width: $ripple-size;
+    height: $ripple-size;
+    border-radius: 50%;
+    transform: scale(0);
+    z-index: -1;
+  }
+
+  .Hover {
+    display: block;
+    position: absolute;
+    top: calc((#{$chekmark-size} - #{$ripple-size}) / 2);
+    left: calc((#{$chekmark-size} - #{$ripple-size}) / 2);
+    width: $ripple-size;
+    height: $ripple-size;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba($color-theme, 0.05);
+    }
+  }
+
+  .Checkmark {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    transition: all $transition-time;
+    width: $chekmark-size;
+    height: $chekmark-size;
+    border-radius: 0.2rem;
+
+    &:not(:checked) {
+      border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@keyframes ripple1 {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    background: rgba($color-theme, 0.3);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple2 {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

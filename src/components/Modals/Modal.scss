@@ -1,0 +1,66 @@
+@import '../../index.scss';
+
+$modal-width: 25%;
+$modal-height: 10rem;
+
+.modal {
+  position: fixed;
+  background-color: black;
+  padding: 0.5rem;
+  color: $text-light;
+  z-index: 200;
+  border: 5px solid blueviolet;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  top: 40vh;
+  left: calc((100vw - #{$modal-width}) / 2);
+  width: $modal-width;
+
+  .modal-header {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background-color: black;
+    text-align: left;
+  }
+
+  .modal-body {
+    width: 90%;
+    margin: 0 auto;
+    background-color: black;
+    text-align: left;
+    padding: 0.5rem;
+
+    .modal-content {
+      color: #fafafa;
+    }
+
+    .modal-footer {
+      margin: 0 auto;
+      background-color: black;
+      text-align: left;
+    }
+  }
+}
+
+.modal-enter {
+  transform: translateY(-10rem);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-exit-active {
+  transform: translateY(-10rem);
+  opacity: 0;
+  transition: all 200ms;
+}

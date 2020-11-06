@@ -1,0 +1,44 @@
+.Row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 0.25rem;
+}
+
+.Column {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 0.25rem;
+
+  .ImageItem {
+    img {
+      margin-top: 0.5rem;
+      vertical-align: middle;
+      width: 100%;
+      //height: 15rem;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .Column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .Column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}

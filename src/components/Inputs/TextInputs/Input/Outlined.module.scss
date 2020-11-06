@@ -1,0 +1,56 @@
+@import'../../../../index.scss';
+
+$transition-time: .2s;
+$float-label-background-color:white;
+
+.FormField {
+   margin-top: 1rem;
+
+   .FormFieldControl {
+      position: relative;
+
+      .FormFieldLabel {
+         position: absolute;
+         font-size: 1rem;
+         left: 0;
+         top: 50%;
+         transform: translateY(-50%);
+         background-color: $float-label-background-color;
+         color: rgba(0, 0, 0, 0.5);
+         margin: 0 0.5rem;
+         transition: $transition-time ease-out;
+         transform-origin: left top;
+         pointer-events: none;
+      }
+
+      .FormFieldInput {
+         width: 100%;
+         font-size: 1rem;
+         outline: none;
+         border: 1px solid #ddd;
+         border-radius: 5px;
+         padding: 0.5rem;
+         color: rgba(0, 0, 0, 0.8);
+         transition: $transition-time ease-out;
+
+
+         &:focus {
+            border-color: $color-theme;
+         }
+
+
+         &:focus+label.FormFieldLabel {
+            color: $color-theme;
+            top: 0;
+            transform: translateY(-50%) scale(.9);
+            font-size: 0.75rem;
+         }
+
+         &:not(:placeholder-shown)+label.FormFieldLabel {
+            top: 0;
+            transform: translateY(-50%) scale(.9);
+            font-size: 0.75rem;
+         }
+      }
+   }
+}

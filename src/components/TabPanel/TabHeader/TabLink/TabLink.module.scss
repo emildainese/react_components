@@ -1,0 +1,23 @@
+@import'../../../../index.scss';
+
+$transition-time: .3s;
+
+.TabLink {
+   background-color: #ccc;
+   box-sizing: border-box;
+   text-align: center;
+   font-size: 1rem;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 1rem 1.5rem;
+   transition: all $transition-time ease-out;
+
+   &:hover {
+      background-color: #ddd;
+   }
+
+   &.Active {
+      background-color: #eee;
+   }
+}

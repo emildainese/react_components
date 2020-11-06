@@ -1,0 +1,30 @@
+@import'../../index.scss';
+
+.ProgressBar {
+   box-sizing: border-box;
+   width: 100%;
+   background-color: rgba(0, 0, 0, .2);
+   border-radius: 0.5rem;
+}
+
+.Bar {
+   position: relative;
+   width: 1%;
+   height: 20px;
+   background-color: $color-theme;
+   border-radius: 0.5rem;
+   opacity: .8;
+   z-index: 1;
+}
+
+.Progress {
+   position: absolute;
+   @include center;
+   color: white;
+   top: 50%;
+   left: 50%;
+   transform: translate(-40%, -50%);
+   width: 8rem;
+   height: 100%;
+   z-index: -1;
+}

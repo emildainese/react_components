@@ -1,0 +1,40 @@
+@import'../../../index.scss';
+
+$transition-time: 0.5;
+$stroke:40;
+
+.test {
+   position: absolute;
+   top: 5rem;
+   left: -10rem;
+   padding: 0.5rem;
+   width: 10rem;
+   height: 8rem;
+   background-color: black;
+   color: $text-light;
+   margin-top: 1rem;
+   @include center;
+}
+
+
+.slide-enter {
+   transform: translateX(0);
+}
+
+.slide-enter-active {
+   transform: translateX(0);
+}
+
+.slide-enter-done {
+   transition: transform #{$transition-time}s ease-out;
+   transform: translateX(#{$stroke}rem);
+}
+
+.slide-exit {
+   transform: translateX(#{$stroke}rem);
+}
+
+.slide-exit-active {
+   transition: transform #{$transition-time}s ease-out;
+   transform: translateX(-#{$stroke}rem);
+}

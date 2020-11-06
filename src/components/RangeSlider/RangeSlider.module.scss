@@ -1,0 +1,65 @@
+@import '../../index.scss';
+
+$cursor-size: 4rem;
+$slider-height: 0.2rem;
+
+.RangeSlider {
+  position: relative;
+  top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $slider-height;
+  width: 100%;
+}
+
+.Slider {
+  position: relative;
+  width: 100%;
+  height: $slider-height;
+  background: rgba(0, 0, 0, 0.5);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border-radius: 1rem;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.Cursor {
+  position: relative;
+  top: calc(#{$slider-height}/ 2);
+  // top: calc(#{-$cursor-size}/2 + #{$slider-height}/2);
+  width: $cursor-size;
+  height: $cursor-size;
+  background: black;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.Thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: $color-theme;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.Max,
+.Min {
+  width: 5rem;
+}
+
+.Max {
+  margin-left: 1rem;
+}
+
+.Min {
+  margin-right: 1rem;
+  text-align: right;
+}

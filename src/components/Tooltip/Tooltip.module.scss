@@ -1,0 +1,155 @@
+@import '../../index.scss';
+
+.Tooltip {
+  position: relative;
+  width: fit-content;
+  background: transparent;
+  text-align: center;
+
+  &:before {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 150px;
+    max-width: 150px;
+    padding: 0.5rem;
+    font-size: 0.8em;
+    line-height: 1.4;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    content: attr(title);
+  }
+
+  &:after {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    content: '';
+  }
+
+  &:hover:before,
+  &:hover:after {
+    display: inline-block;
+  }
+}
+
+//Marker
+.Marker {
+  $marker-size: 40px;
+  $marker-label-size: 35px;
+  position: relative;
+  width: fit-content;
+  background: transparent;
+  text-align: center;
+  z-index: 3;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: $marker-size;
+    height: $marker-size;
+    border-radius: 50% 50% 50% 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &:after {
+    content: attr(title);
+    position: absolute;
+    z-index: 2;
+    top: calc(-50% - #{$marker-label-size - 2px});
+    left: calc(50% - #{$marker-label-size} / 2 - 1px);
+    border-radius: 50%;
+    display: inline-block;
+    width: $marker-label-size;
+    height: $marker-label-size;
+    font-size: 1rem;
+    line-height: $marker-label-size;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  &:hover:before {
+    display: inline-block;
+  }
+
+  &.Top:before {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+//---------------------------------------------------------------
+//Top
+.Tooltip.Top:before {
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Tooltip.Top:after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-width: 0;
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+//Bottom
+.Tooltip.Bottom:before,
+.Marker.Bottom:before {
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Tooltip.Bottom:after,
+.Marker.Bottom:after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-width: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+//Left
+.Tooltip.Left:before,
+.Marker.Left:before {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translateY(-50%);
+}
+
+.Tooltip.Left:after,
+.Marker.Left:after {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-right-width: 0;
+  border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+//Right
+.Tooltip.Right:before,
+.Marker.Right:before {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translateY(-50%);
+}
+
+.Tooltip.Right:after,
+.Marker.Right:after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-left-width: 0;
+  border-right-color: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,26 @@
+@import'../../../../index.scss';
+
+.dropdown-menu-item {
+   background-color: $dropdown-bg-color;
+
+   a,
+   button {
+      width: 100%;
+      background-color: $dropdown-bg-color;
+      color: $text-light;
+      text-align: left;
+      padding-left: 3rem;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+   }
+
+   a:hover,
+   a:focus,
+   a:active,
+   button:hover,
+   button:focus,
+   button:active {
+      background-color: $bg-hover-color;
+   }
+}

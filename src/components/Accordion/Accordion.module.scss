@@ -1,0 +1,10 @@
+@import'../../index.scss';
+
+$transition-time: .2s;
+
+.Accordion {
+   margin: 10rem 0;
+   padding: 0;
+   overflow: auto;
+   border-radius: 0.5rem;
+}

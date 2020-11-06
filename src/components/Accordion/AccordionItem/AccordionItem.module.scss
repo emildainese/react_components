@@ -1,0 +1,58 @@
+@import'../../../index.scss';
+
+$transition-time: .2s;
+
+.Accordion li {
+   padding: 0;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.AccordionControl {
+   font-size: 1rem;
+   background-color: #fafafa;
+   color: rgba(0, 0, 0, .8);
+   width: 100%;
+   margin: 0;
+   outline: none;
+   user-select: none;
+   border: 0;
+   border-bottom: 1px solid #ccc;
+
+   .AccordionTitle {
+      position: relative;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      .Arrow {
+         color: $color-theme;
+         transition: all $transition-time;
+
+         &.Active {
+            transform: rotateZ(180deg);
+         }
+      }
+   }
+
+   .AccordionPanel {
+      text-align: left;
+      color: rgba(0, 0, 0, .8);
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      transition: height $transition-time ease-in-out;
+
+      &.ActivePanel {
+         visibility: visible;
+         opacity: 1;
+         width: 100%;
+         padding: 0 1.5rem;
+      }
+   }
+}

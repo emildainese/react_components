@@ -1,0 +1,62 @@
+.Item {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background: white;
+  transition: transform 200ms;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    bottom: -12px;
+    right: -12px;
+    z-index: -1;
+    background: white;
+    border-radius: 1000px;
+    opacity: 0;
+    transition: opacity 200ms;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &.isActive {
+    transform: translateY(-3px);
+
+    &.isActive:before {
+      opacity: 1;
+    }
+  }
+}
+
+.Content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+p,
+.Name,
+.Email {
+  font-size: 0.8rem;
+  color: gray;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Id,
+img {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  background-color: silver;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}

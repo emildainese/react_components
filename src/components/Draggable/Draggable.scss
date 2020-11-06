@@ -1,0 +1,22 @@
+@import'../../index.scss';
+
+.draggable {
+   background-color: black;
+   box-sizing: border-box;
+   position: absolute;
+   border-radius: .5rem;
+   box-shadow: 0 0 0 .5rem $color-theme;
+   z-index: 100;
+
+   .resizer {
+      position: absolute;
+      box-sizing: border-box;
+      cursor: nw-resize;
+      bottom: 0;
+      right: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: darkmagenta;
+   }
+}

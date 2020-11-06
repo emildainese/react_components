@@ -1,0 +1,60 @@
+@import'../../index.scss';
+
+.card {
+   width: 20rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+   border-radius: 0.5rem;
+   background: #fafafa;
+   position: relative;
+   top: 10rem;
+   left: 10rem;
+
+   .card-header {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+         width: 100%;
+         border-top-left-radius: 0.5rem;
+         border-top-right-radius: 0.5rem;
+      }
+   }
+
+   .card-body {
+      width: 100%;
+
+      h2.card-title {
+         font-weight: 500;
+         font-size: 1.5rem;
+         padding: 0.5rem 0.5rem;
+         color: ragba(0, 0, 0, 0.8);
+      }
+
+      p.card-content {
+         font-weight: 400;
+         font-size: 0.875rem;
+         padding: 0.5rem 0.5rem;
+         line-height: 1.43;
+         color: rgba(0, 0, 0, 0.5);
+      }
+   }
+
+   .card-footer {
+      width: 100%;
+
+      .card-action {
+         padding: 0.5rem 0.5rem;
+
+         button {
+            color: $color-theme; //#1976d2 !important;
+            text-transform: uppercase;
+            background-color: #fafafa !important;
+
+            &:hover {
+               background-color: #dbdbdb !important;
+            }
+         }
+      }
+   }
+}

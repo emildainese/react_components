@@ -1,0 +1,13 @@
+@import'../../../../index.scss';
+
+.NavbarList {
+   @include reset;
+   @include fluid;
+   display: flex;
+}
+
+// @media (max-width:991px) {
+//    .NavbarList {
+//       flex-direction: column;
+//    }
+// }

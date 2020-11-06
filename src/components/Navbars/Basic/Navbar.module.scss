@@ -1,0 +1,57 @@
+@import '../../../index.scss';
+
+$toggle-stroke: 15rem;
+
+.Navbar {
+  transition: transform 0.5s ease-out, width 0.5s ease-out;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: 100;
+
+  &.ToggleSidebar {
+    transform: translateX($toggle-stroke);
+    width: calc(100% - #{$toggle-stroke});
+  }
+
+  .Nav {
+    background-color: #222;
+    @include v-center;
+    justify-content: space-between;
+    transition: all 0.5s ease-out;
+
+    .Toggle {
+      @include v-center;
+    }
+
+    .Navigation {
+      margin-right: 2rem;
+      height: 100%;
+      display: flex;
+
+      .NavLink {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        @include v-center;
+        height: 100%;
+        padding: 0 1rem;
+        color: #fafafa;
+        text-decoration: none;
+        transition: 0.3s;
+        outline: none;
+        border: none;
+
+        &:hover {
+          background-color: rgba($color-theme, 0.8);
+        }
+
+        &.Active {
+          background-color: $color-theme;
+        }
+      }
+    }
+  }
+}

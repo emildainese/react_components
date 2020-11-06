@@ -1,0 +1,40 @@
+@import'../../../index.scss';
+
+$transition-time: 0.3s;
+
+.test {
+   padding: 0.5rem;
+   width: 10rem;
+   height: 8rem;
+   background-color: black;
+   color: $text-light;
+   opacity: 0;
+   margin-top: 1rem;
+   @include center;
+}
+
+.fade-enter {
+   opacity: 0;
+}
+
+.fade-enter-active {
+   transition: opacity #{$transition-time}s;
+   opacity: 1;
+}
+
+.fade-enter-done {
+   opacity: 1;
+}
+
+.fade-exit {
+   opacity: 1;
+}
+
+.fade-exit-active {
+   transition: opacity #{$transition-time}s;
+   opacity: 1;
+}
+
+.fade-exit-done {
+   opacity: 0;
+}

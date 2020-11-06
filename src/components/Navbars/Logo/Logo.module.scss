@@ -1,0 +1,16 @@
+@import '../../../index.scss';
+
+.Logo {
+  font-family: 'Open Sans', sans-serif;
+  @include v-center;
+  text-transform: uppercase;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fafafa;
+  transition: 0.3s;
+
+  &:hover {
+    color: $color-theme;
+  }
+}
